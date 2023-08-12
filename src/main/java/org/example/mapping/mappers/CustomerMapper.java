@@ -25,4 +25,8 @@ public class CustomerMapper {
                 .map(CustomerMapper::mapFrom)
                 .collect(Collectors.toList());
     }
+
+    public static List<Customer> mapFromDto(List<CustomerDTO> source) {
+        return source.parallelStream().map(CustomerMapper::mapFrom).collect(Collectors.toList());
+    }
 }

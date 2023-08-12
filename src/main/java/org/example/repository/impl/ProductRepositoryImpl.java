@@ -12,6 +12,9 @@ import java.util.List;
 public class ProductRepositoryImpl implements ProductRepository {
 
     private List<Product> products;
+    private List<Product> productsOrder1;
+    private List<Product> productsOrder2;
+
 
     public ProductRepositoryImpl() {
         products = new ArrayList<>();
@@ -41,8 +44,20 @@ public class ProductRepositoryImpl implements ProductRepository {
 
     }
 
+    public List<Product> getProductsOrder1() {
+        return productsOrder1;
+    }
+
+    public List<Product> getProductsOrder2() {
+        return productsOrder2;
+    }
+
     @Override
     public List<ProductDTO> getAllProducts() {
         return ProductMapper.mapFrom(products);
+    }
+
+    public List<Product> getProducts() {
+        return products;
     }
 }
